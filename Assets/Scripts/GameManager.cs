@@ -58,7 +58,7 @@ public class GameManager : NetworkBehaviour {
         GUILayout.Label("Mode: " + mode);
     }
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     public void RequestNewPlayerColorServerRPC(ServerRpcParams serverRpcParams = default)
     {
         if (!IsServer) return;
